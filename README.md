@@ -66,7 +66,7 @@ All you need is a compiler that is able to compile c++ program. :)
    ```
 8. In the same path, run the program using
    ```js
-   .\sudoku
+   ./sudoku
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
