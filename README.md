@@ -43,29 +43,30 @@ All you need is a compiler that is able to compile c++ program. :)
    ```sh
    git clone https://github.com/liangsiwei1994/SudokuSolver.git
    ```
-2. Open the `ChessMain.cpp` file.
-3. Initialize an empty chessboard using
+2. Open the `main.cpp` file.
+3. Load a sudoku board (in .dat format, "easy.dat" in this example) to be solved using the command
    ```sh
-   ChessBoard cb;
+   load_board("easy.dat", board);
    ```
-   represents moving the chess piece in position E2 to E4.
-4. Type in the set of moves using the following line into the `ChessMain.cpp` file, where the first move is in the first line, the last move is in the last line.
+4. To solve the sudoku board, use the following function
    ```sh
-   cb.submitMove("E2", "E4");
+   solve_board(board);
    ```
-   represents moving the chess piece in position E2 to E4.
-5. To reset the board for a new set of moves to be analyzed within a single compilation, use:
+5. To display the sudoku board at any instant, use the following function
    ```js
-   cb.resetBoard();
+   display_board(board);
    ```
-   where cb is the instance of chessboard created.
-6. Open the terminal. Go to the folder/directory path and compile the program using the following command
+6. To calculate the number of recursive calls needed and the total possible permutations to solve the board, use the function:
+   ```js
+   compare_board("easy.dat");
+   ```
+7. Open the terminal. Go to the folder/directory path and compile the program using the following command
    ```js
    make
    ```
-7. In the same path, run the program using
+8. In the same path, run the program using
    ```js
-   .\chess
+   .\sudoku
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -75,9 +76,13 @@ All you need is a compiler that is able to compile c++ program. :)
 <!-- SAMPLE OUTPUT -->
 ## Sample Output
 
-The following image shows the expected output based on the current ChessMain.cpp file.
+The following image shows the expected output based on the board is successfully solved.
 
-![Sample Output Screenshot][sampleoutput-screenshot]
+![Sample Success Output Screenshot][samplesuccessoutput-screenshot]
+
+The following image shows the expected output based on the board cannot be solved.
+
+![Sample Failed Output Screenshot][samplefailedoutput-screenshot]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -105,5 +110,6 @@ Use this space to list resources you find helpful and would like to give credit 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[product-screenshot]: images/ChessBoardImage.png
-[sampleoutput-screenshot]: images/SampleOutput.png
+[product-screenshot]: images/SudokuBoard.png
+[samplefailedoutput-screenshot]: images/SampleFailedOutput.png
+[samplesuccessoutput-screenshot]: images/SampleSuccessOutput.png
